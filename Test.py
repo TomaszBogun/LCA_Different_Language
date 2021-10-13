@@ -116,3 +116,28 @@ class TestLca(unittest.TestCase):
         self.assertIsNone(node.right.left.right)
         self.assertIsNone(node.right.right.left)
         self.assertIsNone(node.right.left.right)
+
+    def testDAG1(self):
+        graph = DAG()
+        graph.addNode(1)
+
+        graph.addNode(2)
+        graph.addNode(3)
+        graph.addNode(4)
+        graph.addNode(5)
+        graph.addNode(6)
+        graph.addNode(7)
+
+        graph.addEdge(1, 2)
+        graph.addEdge(1, 3)
+        graph.addEdge(1, 4)
+
+        graph.addEdge(2, 5)
+        graph.addEdge(2, 6)
+        graph.addEdge(3, 5)
+        graph.addEdge(3, 6)
+        graph.addEdge(4, 5)
+        graph.addEdge(4, 6)
+
+        graph.addEdge(6, 7)
+        graph.addEdge(6, 7)
